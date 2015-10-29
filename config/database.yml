@@ -1,0 +1,94 @@
+# # PostgreSQL version
+# #   gem install pg
+# #
+
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: sweetist_dev
+#   password: postgres
+#   pool: 5
+#   host: localhost
+
+# # Below settings are if we want to connect to production db on heroku in dev
+# # Also need to set DATABASE_URL as mentioned here:
+# # https://devcenter.heroku.com/articles/heroku-postgresql#local-setup
+# # summary is perform the following in bash command line:
+# # heroku config | grep HEROKU_POSTGRESQL
+# # then take output of previous comment and use it in following command
+# # export DATABASE_URL=<OUTPUT>
+
+# #  adapter: postgresql
+# #  encoding: unicode
+# #  database: d6k3umts637h6p
+# #  pool: 5
+# #  username: eiqdqmpxugwqeu
+# #  password: ee31QPw43hWzkuSJ1JlV-Ri11R
+# #  host: ec2-54-225-239-184.compute-1.amazonaws.com
+# #  port: 5432
+
+
+# # Warning: The database defined as "test" will be erased and
+# # re-generated from your development database when you run "rake".
+# # Do not set this db to the same as development or production.
+
+# # creating a staging environment to easily update and test production db from local environment
+# # heroku will automatically override these settings
+# staging:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: dc7hs8hkhadu3o
+#   pool: 5
+#   username: sfmpphigelrlpj
+#   password: Ic_x7bWCVO07VdSbqgynDcVINu
+#   host: ec2-54-204-43-138.compute-1.amazonaws.com
+#   port: 5432
+
+# # creating a staging_on_local environment to easily update and test production db from local environment
+# staging_on_local:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: dc7hs8hkhadu3o
+#   pool: 5
+#   username: sfmpphigelrlpj
+#   password: Ic_x7bWCVO07VdSbqgynDcVINu
+#   host: ec2-54-204-43-138.compute-1.amazonaws.com
+#   port: 5432
+
+
+# # setting up production settings so that product environment can be tested in local environment
+# # heroku will automatically override these settings
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: d6k3umts637h6p
+#   pool: 5
+#   username: eiqdqmpxugwqeu
+#   password: ee31QPw43hWzkuSJ1JlV-Ri11R
+#   host: ec2-54-225-239-184.compute-1.amazonaws.com
+#   port: 5432
+
+
+# # creating a production_on_local environment to easily update and test production db from local environment
+# production_on_local:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: d6k3umts637h6p
+#   pool: 5
+#   username: eiqdqmpxugwqeu
+#   password: ee31QPw43hWzkuSJ1JlV-Ri11R
+#   host: ec2-54-225-239-184.compute-1.amazonaws.com
+#   port: 5432
+
+
+default: &default
+  adapter: postgresql
+  pool: 5
+  host: localhost
+  timeout: 5000
+  username: postgres
+  password: 12345678
+
+development:
+  <<: *default
+  database: restaurantereur
